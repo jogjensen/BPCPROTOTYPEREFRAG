@@ -1,0 +1,29 @@
+﻿@page "/seeallbookings"
+@using BPCPROTOTYPEREFRAG.Client.ViewModel
+<h1>See All Bookings</h1>
+<h2>TEST TEST TEST</h2>
+
+@foreach (var b in bookingView.Bookings)
+{
+    <div class="container">
+        <div class="col-12">
+            <label>@b</label>
+            <label>@b.StartAddress</label>
+            <label>@b.StartCity</label>
+            <label></label>
+        </div>
+    </div>
+}
+
+@code
+{
+    BookingVM bookingView = new BookingVM();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await bookingView.GetBookings();
+    }
+    
+}
+
+
