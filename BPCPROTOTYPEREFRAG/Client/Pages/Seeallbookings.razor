@@ -3,17 +3,41 @@
 <h1>See All Bookings</h1>
 <h2>TEST TEST TEST</h2>
 
-@foreach (var b in bookingView.Bookings)
-{
-    <div class="container">
-        <div class="col-12">
-            <label>@b</label>
-            <label>@b.StartAddress</label>
-            <label>@b.StartCity</label>
-            <label></label>
-        </div>
-    </div>
-}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Order No</th>
+        <th>Status</th>
+        <th>CVR No</th>
+        <th>Number of cars needed</th>
+        <th>Comment</th>
+        <th><button>More info</button></th>
+        <th>Start Address</th>
+        <th>Start Postalcode</th>
+        <th>Start city</th>
+        <th>Start Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var b in bookingView.Bookings)
+    {
+        <tr>
+            <td>@b.OrderNo</td>
+            <td>@b.Status</td>
+            <td>@b.CompanyCvrNo</td>
+            <td>@b.NumOfCarsNeeded</td>
+            <td>@b.Comment</td>
+            <td>@b.StartDate</td>
+            <td>@b.StartAddress</td>
+            <td>@b.StartPostalCode</td>
+            <td>@b.StartCity</td>
+            <td>@b.StartCountry</td>
+        </tr>
+    }
+    </tbody>
+</table>
+
 
 @code
 {
